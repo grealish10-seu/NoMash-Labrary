@@ -1,0 +1,77 @@
+Overview: Assessed Lab
+SUBMISSION
+Submit the all tasks as a single PDF file on:
+
+                                                                 Moodle -> FIT5032 -> Grades -> Assessed Lab 11
+
+                                                 https://learning.monash.edu/mod/assign/view.php?id=4673239
+
+Please submit the file by Week 7 Sunday, 23:55 (Melbourne Time). Late submissions will result in a penalty of 10% marks per day.
+
+
+EFOLIO TASK 11.1 (PASS AND CREDIT LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Link to your deployed project
+
+Screenshot: Screenshot of Cloudflare page indicating it is your deployed project (for example, you can screenshot similar to the screenshot provided in 11.1.13)
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. Link is working
+
+EFOLIO TASK 11.2 (DISTINCTION AND HIGH DISTINCTION LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot: Screenshot of Cloudflare page including your address bar indicating the Get Weather is working. 
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot 
+11. Lab setup - Deployment
+11. Lab setup - Deployment
+Deployment using VueJS is very simple, it will take you less than 30 minutes to do it. 
+
+Please remember this is due to the nature of the vue is front-end framework, deployment with a server backend requires a much longer time (if you are not experienced, can take a whole day at least) as you need to install and configure relevant server available. (For example, Apache web server to run PHP, MariaDB/ MySQL server to run database)
+
+Please note your Git project that you try to deploy shall only contain one project, if you contain multiple project, then the deployment can fail 
+
+1. Navigate to https://www.cloudflare.com/en-au/
+
+2. If you do not have an account, then click on [Start for free] button as indicated using blue arrow, otherwise, click on [Login] on top right corner.
+
+It is recommended that you use your personal account to set this up.
+
+
+
+3. After successful login, you will be able to see the welcome page of CloudFlare, choose [Start Building] button as indicated using the red arrow.
+
+
+
+4. Choose [Build an application] as indicated using red arrow
+
+
+5. Choose [Pages] tab (The first red arrow on top) and Click on [Import an existing Git Repository] 
+
+
+
+6. Remain at [Github] tab, and click on [Connect Github] as indicated using red arrow
+
+
+7. Login to GitHub in the new opening page, and choose the repository you want to deploy, in my class, I choose zhongyiwei/library which is a private repository I created for this unit. And click on [Install & Authorize] sd indicated at the button of screenshot using red arrow
+
+
+8. In the next page, choose the repository again and click on [Begin setup]
+
+
+9. Choose [Vue] under Framework preset as indicated with red arrow in the middle of screen, and click [Save and Deploy] at the bottom right of the screen indicated using red arrow
+
+
+10. Wait for the deployment to finish :)
+
+
+11. You can see the success page, and your project will be available on top of the screen, if you want to continue to see configuration of your server, you can click on [Continue to Project] button at the bottom of the page
+
+
+12. You will be able to see the domain again to check the content
+
+
+13. If you check your /WeatherCheck page, the page might not work. And as part of D & HD task, please try to fix the issue and deploy again. 
+
+Please note issue happens after deployment is very common, this is usually due to different server configuration or security requirement  or incorrect link to database.

@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}EFOLIO TASK 10.1 (PASS AND CREDIT LEVEL)}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Screenshot Set 1: Current Location Weather}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Weather Application Code Implementation}{2}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Browser Display - Current Location Weather}{3}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Screenshot Set 2: API Page - Authors and Books Count}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}CountBookAPI Code Implementation}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Browser Display - Authors and Books Statistics}{5}{subsubsection.1.2.2}%
+\contentsline {section}{\numberline {2}EFOLIO TASK 10.2 (DISTINCTION AND HIGH DISTINCTION LEVEL)}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Screenshot Set 1: Weather Search by City}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Weather Search Code Implementation}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Browser Display - Clayton Weather Search}{7}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Screenshot Set 2: GetAllBookAPI Implementation}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}GetAllBookAPI Code Implementation}{8}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Browser Display - All Books JSON Format}{9}{subsubsection.2.2.2}%
+\contentsline {section}{\numberline {3}Key Implementation Features}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}External API Integration}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Local API Development}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Technical Implementation}{10}{subsection.3.3}%

@@ -1,0 +1,299 @@
+Overview: Assessed Lab
+SUBMISSION
+Submit the all tasks as a single PDF file on:
+
+                                                                           Moodle -> FIT5032 -> Grades -> Assessed Lab 10
+
+                                                            https://learning.monash.edu/mod/assign/view.php?id=4673214
+
+Please submit the file by Week 7 Wednesday, 23:55 (Melbourne Time). Late submissions will result in a penalty of 10% marks per day.
+
+
+EFOLIO TASK 10.1 (PASS AND CREDIT LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot set 1: Screenshots of the code and browser showing the current location weather
+
+Screenshot set 2: Screenshots of the code and browser in API page showing the number of authors and books.
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. 
+
+EFOLIO TASK 10.2 (DISTINCTION AND HIGH DISTINCTION LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot set 1: Screenshots of your code and browser screen demonstrating you can search weather by city, for example, type "Clayton, AU" and it will show Clayton's weather and temperature in Celsius with a corresponding icon of the weather 
+
+Screenshot set 2: Screenshots of your code and browser screen demonstrating you can show all books in JSON format when navigating to a page called "GetAllBookAPI"
+
+See this article about how to see the commit history of a Github repo: https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/differences-between-commit-views
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. 
+0.1 Lab setup - Install necessary package
+10.1.1 Setup the necessary package
+1. To use API services, you will need to use axios, to install, enter npm install axios in your terminal or console
+
+Axios is a popular open-source JavaScript library used to make HTTP requests from web browsers or Node.js environments, in our case, we are just using web browsers to make HTTP requests (HTTP request can be requests like GET, POST, PUT, DELETE, etc. The link shared here will give more information about the HTTP request: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+10.1.2 Apply free API service
+1. Navigate to https://openweathermap.org/price
+
+2. Under "Current weather and forecasts collection", choose free, and click on GetAPI key
+
+
+
+3. You will be prompt to register, and after finish registration, activate your account using email.
+
+4. Navigate to https://home.openweathermap.org/api_keys for your API keys
+
+10.2 Utilizing external API service
+10.2 Utilizing external API service 
+The example given below is just one of the common API usage, you need to read the API documentation if you intend to use other API services.  
+
+10.2.1 Page setup
+
+1. Create a page that is used for API service, in here, we created a WeatherView.vue page to handle the API service
+
+
+
+2. As usual, we need to do the following tasks, please try to check the code only when you have done based on the instructions provided. 
+
+2.1 Task 1: Modify the Routing so that it contains a route called "GetWeather", this route references the WeatherView.vue page
+
+
+扩大
+2.2 Task 2: Add the hyperlink into BHeader.vue so that the page can have a hyperlink to the weathercheck page. (The hyperlink name is "Get Weather", with the URL to be /WeatherCheck)
+
+
+扩大
+10.2.2 <Template> setup
+
+1: Create <template> section in your WeatherView.vue, which contains a text field, with a vue-model called "city", also create a button that has an onclick listener called searchByCity with "Search" written on the button.
+
+<div class="container">
+    <div class="header">
+        <h1>WEATHER APP</h1>
+        <div class="search-bar">
+            <input 
+                type="text" 
+                v-model="city"
+                placeholder="Enter city name"
+                class="search-input"
+            />
+            <button @click="searchByCity" class="search-button">
+                Search
+            </button>
+            <br>
+            <br>
+            Please implement "Search Weather by City".
+        </div>
+    </div>
+</div>
+
+
+扩大
+2. After you have completed the initial setup, we will proceed to writing API-related code which is used to retrieve current weather
+
+Please note again API coding varies according to API service provider, if you are intending to use other API services, best to look into their official documentation
+
+As the data structure of API is usually different, we will share the source code of getting current weather straight and provide coding documentation as comment to help you assist your understanding.
+
+3.1 Additional code needed in <template> section for API relevant data display:
+
+      <!--The <main> tag in HTML is used to specify the main content of a document 
+      More info about main, check https://www.w3schools.com/tags/tag_main.asp-->  
+      <main>
+        <!--If there are no data returned, then skip rendering the information-->  
+        <div v-if="weatherData">
+          <!--Display the weather data attribute returned from API
+          Example of API data: https://openweathermap.org/current-->  
+          <h2>
+              {{ weatherData.name }}, {{ weatherData.sys.country }}
+          </h2>
+          <div>
+            <!--The image source of of the weather icon will be coming from a function called iconUrl
+                which will be shared in script later-->  
+            <img :src="iconUrl" alt="Weather Icon" />
+            <p>{{ temperature }} °C</p>
+          </div>
+          <!-- weather[0] means the current weather, the way we need to obtain data depends on how
+          the API JSON data looks-->
+          <span>{{ weatherData.weather[0].description }}</span>
+        </div>
+      </main>
+
+10.2.3 <script> setup
+
+1. The content written in <script> will be the one handling the API. Most of common API is presented using [URL Get] method with API key  
+
+URL Get method's query string (name/value pairs) is sent in the URL of a GET request, for example, /test?variableName1=value1&variableName2=value2
+
+This section will be the same with 3 which we will share the code and provide explaination you will need to try to see how you should write the code 
+
+  <script>
+  // The info section in 10.1.1 provided detailed information about this package 
+  import axios from "axios";
+
+  const apikey = "Follow 10.1.2 to obtain your API key";
+  
+  export default {
+    name: "App",
+    data() {
+      return {
+        city: "",
+        weatherData: null,
+        hourlyForecast: [],
+        dailyForecast: [],
+      };
+    },
+    //computed is a property that is used to define a property that 
+    //is dependent on other data properties. 
+    //If we using a more easy to understand words to understand the concept: 
+    //the derived value such as temperature automatically update when the relevant value change.
+    computed: {
+      //There are multiple way to obtain the data in Celsius format.
+      //Calculation by yourself like below after data is retireved or via API parameters
+      
+      //Example of adding additional units requirement, if you choose this, remember to change section 3.1
+      //https://api.openweathermap.org/data/2.5/weather?lat=XXX&lon=-XXX.15&appid={API key}&units=metric
+      temperature() {
+        return this.weatherData
+          ? Math.floor(this.weatherData.main.temp - 273)
+          : null;
+      },
+      //Get the current weather icon using the API link
+      iconUrl() {
+        return this.weatherData
+          ? `http://api.openweathermap.org/img/w/${this.weatherData.weather[0].icon}.png`
+          : null;
+      },
+    },
+    //There are two steps involved in this, 
+    //step 1: identify current location 
+    //step 2: after identify, get the weather data straight based on the current location.
+    mounted() {
+      this.fetchCurrentLocationWeather();
+    },
+    methods: {
+      //Async in a easy to understand way means the method will run in backend thread, 
+      //And it won't occupy the main thread, so the user experience is still smooth
+      async fetchCurrentLocationWeather() {
+        //The navigator.geolocation object is part of the Web API provided by modern web browsers
+        //Please note this function is not belongs to Vue or openweather.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(async (position) => {
+            const { latitude, longitude } = position.coords;
+            //API link to obtain the current weather based on the current location browser identified 
+            const url = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`;
+            //await means wait for the fetchWeatherData method to complete before proceeding
+            await this.fetchWeatherData(url);
+          });
+        }
+      },
+      async fetchWeatherData(url) {
+        try {
+          const response = await axios.get(url);
+          //Returned data from API is stored as JSON file in weatherData
+          this.weatherData = response.data;
+        } catch (error) {
+          console.error("Error fetching weather data:", error);
+        }
+      }
+    }
+  }
+</script>
+
+You will be able to see a page similar to this.
+
+Please look at the assessed lab for D & HD tasks for more details
+
+
+10.3 Create your own API with Cloud Functions
+To create an API service, we need to have a page that can show JSON data obtained from your local data. First, please ensure you have authors.json under src/assets/json. If you don't have such a file, please refer back to Week 2's Studio.
+
+1. Create a new page CountBookAPI.vue
+
+
+2. Modify the router to include a new path called CountBookAPI
+
+
+扩大
+3. Add a navigation link in BHeader.vue
+
+
+扩大
+4. Modify CountBookAPI.vue to display JSON data
+
+<template>
+    <div v-if="apiResponse" class="api-response">
+      <pre>{{ JSON.stringify(apiResponse, null, 2) }}</pre>
+    </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const authors = ref([])
+const loading = ref(false)
+const error = ref(null)
+const apiResponse = ref(null)
+
+const authorsCount = ref(0)
+const totalBooks = ref(0)
+
+const calculateStats = () => {
+  authorsCount.value = authors.value.length
+  totalBooks.value = authors.value.reduce((total, author) => {
+    return total + author.famousWorks.length
+  }, 0)
+}
+
+
+const getApiData = async () => {
+    loading.value = true
+  error.value = null
+  
+  try {
+    const response = await fetch('src/assets/json/authors.json')
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    
+    const data = await response.json()
+    authors.value = data
+    
+    calculateStats()
+    
+  } catch (err) {
+    error.value = `Error loading authors data: ${err.message}`
+    console.error('Error loading authors data:', err)
+  } finally {
+    loading.value = false
+  };
+
+  apiResponse.value = {
+    success: true,
+    data: {
+      authorsCount: authorsCount.value,
+      totalBooks: totalBooks.value,
+      authors: authors.value.map(author => ({
+        name: author.name,
+        bookCount: author.famousWorks.length,
+      }))
+    },
+    timestamp: new Date().toISOString()
+  }
+}
+
+onMounted(() => {
+  getApiData();
+})
+
+defineExpose({
+  getApiData
+})
+</script>
+
+5. You will be able to see a page like this below
+
+

@@ -1,0 +1,133 @@
+Overview: Assessed Lab
+SUBMISSION
+Submit the all tasks as a single PDF file on:
+
+                                                                   Moodle -> FIT5032 -> Grades -> Assessed Lab 7
+
+                                                   https://learning.monash.edu/mod/assign/view.php?id=4650775
+
+Please submit the file by Week 6 Wednesday, 23:55 (Melbourne Time). Late submissions will result in a penalty of 10% marks per day.
+
+
+EFOLIO TASK 7.1 (PASS AND CREDIT LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot set 1: Screenshots of the registration page on the browser and Visual Studio code
+
+Screenshot set 2: Screenshots of the login page on the browser and Visual Studio code with console panel to show current user
+
+Screenshot 3: Registered user on Firebase
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. 
+
+EFOLIO TASK 7.2 (DISTINCTION AND HIGH DISTINCTION LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot set 1: Screenshots of browser and visual studio code that indicate you can sign in by multiple roles in the system
+
+Screenshot set 2: Screenshots of Log out page with developer console to show current user 
+
+See this article about how to see the commit history of a Github repo: https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/differences-between-commit-views
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. 
+7.1. Lab set up
+7.1.1 Setting up the Firebase Project
+1. Navigate to https://firebase.google.com/ , and sign in with your Monash Google account.
+
+2. On the top right corner of the page, there will be a hyperlink indicating [Go to console]. Please click on the link.
+
+
+
+3. In the Firebase console page, click on [Create a Firebase project]
+
+
+
+4. Setup Firebase:
+
+Enter your project name, and choose "monash.edu" as the organisation.
+
+
+
+
+
+Disable Google Analytics, and create the project.
+
+
+
+Woah! The project is created.
+
+7.1.2 Create web app in Firebase project
+1. Create a web app, follow the screenshot to create it,
+
+[Important] After create the web app, please keep the page open as it contains important information we need to use later.
+
+
+
+For the final page, as indicated above, please keep it open:
+
+
+6. Open a new browser tab, and follow steps 1 and 2 to go to the developer console again. 
+
+7.1.3 Configure Authentication
+7. Follow the screenshot provided for the full authentication process.
+
+
+
+
+
+That's it. In the next step, we will focus on vue project. Please remember to leave the web app page tab open. 
+7.2. VueJS setup
+7.2.1 Setting up the VueJs
+1. Please reuse your previous project of NoMash Library. 
+
+2. Create a new view vue called FirebaseSigninView.vue
+
+
+
+ 3. Under router => index.js, add a new route that leads to FirebaseSigninView, Please remember to import the component by
+
+import FirebaseSigninView from '@/views/FirebaseSigninView.vue'
+
+
+
+4. Under BHeader.vue (The Header File we used previously, Add an additional Navigation Link so that we can try to use Firebase Authentication.
+
+
+ 5. Install Firebase using npm install:
+
+
+6. Copy the code Firebase generated when creating web app to [main.js]. The Firebase code should be placed under "app.mount('#app')".
+
+
+
+The initial set-up for vueJS is done.
+
+The next page will tell you how to add authentication process.7.3. Registration Process
+7.3.1 Create Firebase Registration page
+1. Create a new file under view called: FirebaseRegisterView.vue.
+
+
+2. Follow VueJS Setup => 7.3 to add new Routing. In this demo project, the new register link is called FireRegister
+
+3. Define FirebaseRegisterView.vue content. As the process is standard, please just remember the functions that is needed to perform registration. We still suggest you to type the code out so that you can better remember the process. 
+
+
+
+In regarding to the code above, both getAuth and createUserWithEmailAndPassword is from firebase library itself. You might sometimes wonder what does all the firebase's functionality mean, instead of we providing the explainations, we strongly suggest you to go to offical Firebase documentation site for reference. For example, If you are not sure what does getAuth mean, Firebase provided explain about it. https://modularfirebase.web.app/reference/auth.getauth. This will help you shape the ability to perform self study and research. 
+For catch function, it is similiar to try and catch in Java, it provide the ability to capture the error and display the error code to help with furhter debugging.
+4. To verify the registration.
+
+You can go to Firebase => Authentication => Users to find your entry
+
+
+7.4. Sign In Process
+7.4.1 Create Firebase Sign-in page
+1. The sign-in page is very similar to registration. We are replacing createUserWithEmailAndPassword to signInWithEmailAndPassword. Then we change the heading and button. And the sign-in page is done.
+
+Please note we have used an additional auth function to try to capture who is the current user who is signed in. 
+
+
+
+
+2. To verify whether user is signed in. You can go to the Console panel in the browser to see what has been printed
+

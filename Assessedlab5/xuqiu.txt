@@ -1,0 +1,44 @@
+‼️ Submission: Assessed Lab
+SUBMISSION
+Submit the all tasks as a single PDF file on:
+
+                                                                    Moodle -> FIT5032 -> Grades -> Assessed Lab 5
+
+                                                      https://learning.monash.edu/mod/assign/view.php?id=4630569
+
+Please submit the file by Week 5 Wednesday, 23:55 (Melbourne Time). Late submissions will result in a penalty of 10% marks per day.
+
+
+EFOLIO TASK 5.1 (PASS AND CREDIT LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot 1: Modified Library form with evidence of password confirmation validation
+
+Screenshot 2: Using VueJS DevTools to test your components
+
+EVALUATION CRITERIA: 
+Screenshot clearly shows error message shown to user when passwords do not match.
+
+Student demonstrates knowledge of VueJS DevTools to carry out debugging/testing.
+
+EFOLIO TASK 5.2 (DISTINCTION AND HD LEVEL) 
+Student shows advanced thinking in their ability to implement industry practices around Navigation, Security and Routing.
+
+WHAT TO SUBMIT (INDIVIDUAL): 
+A single PDF containing the following files (each file in a new page within the same PDF with header stating what file it is)
+
+router/index.js
+
+src/App.vue
+
+src/views/HomeView.vue
+
+Screenshot of App in Localhost (browser) open on Home page
+
+Screenshot of App in Localhost (browser) open on About page
+
+Screenshots of Custom Routing
+
+EVALUATION CRITERIA: 
+Screenshot clearly shows working navigation / routes
+
+Code shows successful learning of key concepts around routing (e.g. conditional routing)

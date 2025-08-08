@@ -1,0 +1,149 @@
+Overview: Assessed Lab
+SUBMISSION
+Submit the all tasks as a single PDF file on:
+
+                                                                   Moodle -> FIT5032 -> Grades -> Assessed Lab 8
+
+                                                   https://learning.monash.edu/mod/assign/view.php?id=4650953
+
+Please submit the file by Week 6 Sunday, 23:55 (Melbourne Time). Late submissions will result in a penalty of 10% marks per day.
+
+
+EFOLIO TASK 8.1 (PASS AND CREDIT LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot set 1: Screenshots of the AddBook page on the browser and Visual Studio code
+
+Screenshot set 2: Screenshots of the Firestore page that contains newly added data
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. 
+
+EFOLIO TASK 8.2 (DISTINCTION AND HIGH DISTINCTION LEVEL) 
+WHAT TO SUBMIT (INDIVIDUAL): 
+Screenshot set 1: Screenshots of browser and visual studio code that indicates you can update and delete the data from Firestore
+
+Screenshot set 2: Screenshots of browser and visual studio code that indicates you can retrieve the database using where, orderby and limit, there are no restrictions of how many queries you need to use to do so. 
+
+See this article about how to see the commit history of a Github repo: https://docs.github.com/en/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/differences-between-commit-views
+
+EVALUATION CRITERIA: 
+All activities are completed properly. The screenshot resolution is clear. 
+
+8.1 Lab set up
+8.1.1 Setting up the Firstore
+1. Navigate to https://firebase.google.com/ 
+
+2. On the top right corner of the page, there will be a hyperlink indicating [Go to console]. Please click on the link.
+
+
+3. Click on the Firebase project created by you from Week 7
+
+
+4. Choose [Build] > [Firestore database]
+
+
+5. Choose [Create Database]
+
+
+6. Choose the server location that is close to you, for example, Hong Kong, and click on [Next]
+
+
+7. Choose [Start in test mode]
+
+
+8. Your Firestore should be created successfully right now
+
+
+8.1.2 Create/ Reuse web app in Firebase project8.2 VueJS setup
+8.2.1 Install package and configure Main.JS file
+The steps are slightly different to 7.2.1 from the last lab. You will need to install firebase npm package if you have not install it. The difference in this part is indicated in part 2 and 3 below.
+
+1. Install Firebase using npm install if you have not done so:
+
+
+2. Create a new folder called [Firebase] under [src] folder, and within [Firebase] folder, create a [init.js] file
+
+
+3. Move the Firebase config from main.js to this new init.js file. 
+
+Adding additional Firestore related code. 
+
+Having dedicated firebase js will help manage and modular the package when it is needed
+
+
+8.4 Use Firestore to create new data in library system
+8.4.1 Setup a new page for data creation
+1. In this example, we will create a new page for adding book details as documents into Firestore as a collection
+
+2. Create a new page called [AddBookView.vue] in views
+
+
+3. Define a template that allows you to add new book records via HTML form post.
+
+The template should fit the following requirements:
+
+Field name 1: isbn 
+
+Filed name 2: name
+
+Form by default should prevent reloading the page when submitted
+
+Both of the fields is required field
+
+isbn needs to be saved as number instead of string
+
+After you have done so, you can have a look at the answer below:
+
+
+扩大
+4. Write the script part, the script should fulfil the following requirement:
+
+db should be imported from database
+
+Reference of isbn and name
+
+async task should be called to add isbn and name
+
+Inside the async task, the data should be added to a collection called "books"
+
+After you have done so, you can have a look at the answer below:
+
+
+扩大
+8.4.2 Modify the existing page to incorporate added page
+1. Modify the header information to include addbook link
+
+
+扩大
+2. Update router index.js:
+
+
+扩大
+3. All done, after running your program and adding the book. The Firestore database will reflect the data that has been posted
+
+8.5 Use query to find data from Firestore
+8.5.1 Create a new component for query
+1. As Firestore has the capability to query for data, we will create a new component for displaying the data with additional conditions 
+
+Please also think about why we use component instead of page. After that you can see the answer below:
+
+
+扩大
+2. Create a booklist component. And follow the current conditions:
+
+Displaying the book that has isbn more than 1000
+
+Use async task to retrieve the data
+
+Use query to query the collection of data, and find the book document using where statement
+
+The booklist component is loaded directly under the Addbook page
+
+
+扩大
+
+扩大
+
+扩大
+3. Please edit AddBookView.vue to display books with ISBN > 1000. Final result shall be look like this:
+

@@ -1,0 +1,316 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{float}
+
+% Page setup
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{FIT5032 Assessed Lab 7}
+\lhead{Firebase Authentication Implementation}
+\cfoot{\thepage}
+
+% Code listing style
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    showstringspaces=false,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
+
+\title{\textbf{FIT5032 Assessed Lab 7 Submission\\Firebase Authentication Implementation}}
+\author{Student Name: [Du Daoan]\\Student ID: [35523166]}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+% =============================================================================
+% EFOLIO TASK 7.1 (PASS AND CREDIT LEVEL)
+% =============================================================================
+
+\section{EFOLIO TASK 7.1 - Firebase Authentication Basic Implementation}
+
+\subsection{Screenshot Set 1: Registration Page}
+
+\subsubsection{Registration Page in Browser}
+
+% Browser screenshot of registration page
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.9\textwidth]{registration_browser.png}
+     \caption{FirebaseRegisterView.vue registration page displayed in browser}
+     \label{fig:reg_browser}
+ \end{figure}
+
+\textbf{Required:} Screenshot of registration page in browser showing the form with email, password, and confirm password fields.
+
+\subsubsection{Registration Page in Visual Studio Code}
+
+% VS Code screenshot of registration page code
+ \begin{figure}[H]
+     \centering
+     \includegraphics[width=0.9\textwidth]{registration_vscode.png}
+     \caption{FirebaseRegisterView.vue source code in Visual Studio Code}
+     \label{fig:reg_vscode}
+ \end{figure}
+
+\textbf{Required:} Screenshot of FirebaseRegisterView.vue file open in VS Code showing the Vue component code.
+
+\subsection{Screenshot Set 2: Login Page with Console}
+
+\subsubsection{Login Page in Browser}
+
+% Browser screenshot of login page
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{login_browser.png}
+    \caption{FirebaseSigninView.vue login page displayed in browser}
+    \label{fig:login_browser}
+\end{figure}
+
+\textbf{Required:} Screenshot of login page in browser with email and password fields.
+
+\subsubsection{Login Page in VS Code with Console Panel}
+
+% VS Code screenshot with console panel
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.9\textwidth]{login_vscode_console.png}
+     \caption{FirebaseSigninView.vue in VS Code with browser console showing current user information}
+     \label{fig:login_vscode_console}
+\end{figure}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=0.9\textwidth]{Signin_console.png}
+     \caption{Firebase Authentication login page with developer console showing detailed user authentication logs}
+     \label{fig:signin_console}
+\end{figure}
+
+\textbf{Required:} Screenshot showing VS Code with FirebaseSigninView.vue open AND browser console panel displaying current user information after successful login.
+
+\subsection{Screenshot 3: Registered User in Firebase Console}
+
+% Firebase console screenshot
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{firebase_registered_user.png}
+%     \caption{Firebase Console showing registered users in Authentication > Users section}
+%     \label{fig:firebase_users}
+% \end{figure}
+
+\textbf{Required:} Screenshot of Firebase Console Authentication > Users section showing the registered user entries.
+
+\newpage
+
+% =============================================================================
+% EFOLIO TASK 7.2 (DISTINCTION AND HIGH DISTINCTION LEVEL)
+% =============================================================================
+
+\section{EFOLIO TASK 7.2 - Advanced Firebase Authentication Features}
+
+\subsection{Screenshot Set 1: Multiple Authentication Methods}
+
+\subsubsection{Multiple Sign-in Methods in Browser}
+
+% Multiple auth methods in browser
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{multiple_signin_browser.png}
+%     \caption{Browser showing multiple authentication options (Email/Password, Google OAuth)}
+%     \label{fig:multiple_signin_browser}
+% \end{figure}
+
+\textbf{Required:} Screenshot of browser showing multiple sign-in options (Email/Password and Google Sign-in buttons).
+
+\subsubsection{Multiple Authentication Implementation in VS Code}
+
+% Multiple auth implementation in VS Code
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{multiple_signin_vscode.png}
+%     \caption{VS Code showing implementation of multiple authentication methods}
+%     \label{fig:multiple_signin_vscode}
+% \end{figure}
+
+\textbf{Required:} Screenshot of VS Code showing the implementation of multiple authentication methods in the source code.
+
+\subsection{Screenshot Set 2: Logout Functionality}
+
+\subsubsection{Logout Page in Browser}
+
+% Logout functionality in browser
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{logout_browser.png}
+%     \caption{Browser showing logout functionality and user authentication state}
+%     \label{fig:logout_browser}
+% \end{figure}
+
+\textbf{Required:} Screenshot of browser showing logout functionality with user information displayed.
+
+\subsubsection{Developer Console Showing Current User}
+
+% Console showing current user after logout
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{logout_console.png}
+%     \caption{Developer console showing current user information and logout process}
+%     \label{fig:logout_console}
+% \end{figure}
+
+\textbf{Required:} Screenshot of browser developer console showing current user information and the logout process with detailed console logs.
+
+\newpage
+
+% =============================================================================
+% APPENDIX: KEY IMPLEMENTATION CODE
+% =============================================================================
+
+\section{Appendix: Key Implementation Code}
+
+\subsection{Firebase Configuration (main.js)}
+
+\begin{lstlisting}[caption=Firebase initialization in main.js]
+// Firebase configuration
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBNRlwHmMrzr0BzLzfo-dlH3tEY53DuF7k",
+  authDomain: "week7-dda.firebaseapp.com",
+  projectId: "week7-dda",
+  storageBucket: "week7-dda.firebasestorage.app",
+  messagingSenderId: "56980101562",
+  appId: "1:56980101562:web:addd00ffa74363d48a2583"
+};
+
+// Initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+\end{lstlisting}
+
+\subsection{Registration Implementation}
+
+\begin{lstlisting}[caption=Key registration function from FirebaseRegisterView.vue]
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+
+const registerUser = async () => {
+  try {
+    const auth = getAuth()
+    const userCredential = await createUserWithEmailAndPassword(
+      auth, 
+      registerForm.value.email, 
+      registerForm.value.password
+    )
+    
+    const user = userCredential.user
+    console.log('Firebase Registration Success:', user)
+    
+  } catch (error) {
+    console.error('Registration error:', error)
+  }
+}
+\end{lstlisting}
+
+\subsection{Sign-in Implementation}
+
+\begin{lstlisting}[caption=Key sign-in function from FirebaseSigninView.vue]
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
+
+const signInWithFirebase = async () => {
+  try {
+    const auth = getAuth()
+    const userCredential = await signInWithEmailAndPassword(
+      auth, 
+      loginForm.value.email, 
+      loginForm.value.password
+    )
+    
+    const user = userCredential.user
+    console.log('Firebase Sign In Success:', user)
+    
+  } catch (error) {
+    console.error('Sign in error:', error)
+  }
+}
+
+// Monitor authentication state
+onAuthStateChanged(auth, (currentUser) => {
+  if (currentUser) {
+    console.log('User is signed in:', currentUser)
+  } else {
+    console.log('User is signed out')
+  }
+})
+\end{lstlisting}
+
+\newpage
+
+% =============================================================================
+% SCREENSHOT CAPTURE GUIDE
+% =============================================================================
+
+\section{Screenshot Capture Guide}
+
+\subsection{Task 7.1 Screenshots}
+
+\textbf{Screenshot Set 1 - Registration Page:}
+\begin{itemize}
+    \item \textbf{registration\_browser.png:} Navigate to \texttt{http://localhost:5175/FireRegister}, capture full browser window
+    \item \textbf{registration\_vscode.png:} Open \texttt{src/views/FirebaseRegisterView.vue} in VS Code, capture full window
+\end{itemize}
+
+\textbf{Screenshot Set 2 - Login Page:}
+\begin{itemize}
+    \item \textbf{login\_browser.png:} Navigate to \texttt{http://localhost:5175/firebase-signin}, capture browser window
+    \item \textbf{login\_vscode\_console.png:} Split screen showing VS Code with \texttt{FirebaseSigninView.vue} AND browser with DevTools console open (F12) after successful login
+\end{itemize}
+
+\textbf{Screenshot 3 - Firebase Console:}
+\begin{itemize}
+    \item \textbf{firebase\_registered\_user.png:} Go to Firebase Console > Authentication > Users, capture user list
+\end{itemize}
+
+\subsection{Task 7.2 Screenshots}
+
+\textbf{Screenshot Set 1 - Multiple Authentication:}
+\begin{itemize}
+    \item \textbf{multiple\_signin\_browser.png:} Capture browser showing Email/Password + Google Sign-in buttons
+    \item \textbf{multiple\_signin\_vscode.png:} Show VS Code with Google OAuth implementation code
+\end{itemize}
+
+\textbf{Screenshot Set 2 - Logout Functionality:}
+\begin{itemize}
+    \item \textbf{logout\_browser.png:} Show browser with logged-in user and logout button
+    \item \textbf{logout\_console.png:} Browser DevTools console showing detailed user info and logout logs
+\end{itemize}
+
+\section{Technical Achievement Summary}
+
+This implementation demonstrates:
+\begin{itemize}
+    \item \textbf{Firebase Integration:} Complete setup with Vue.js application
+    \item \textbf{User Registration:} Email/password registration with validation
+    \item \textbf{User Authentication:} Sign-in with detailed console logging
+    \item \textbf{State Management:} Real-time authentication state monitoring
+    \item \textbf{Multiple Auth Methods:} Email/password and Google OAuth options
+    \item \textbf{Security Features:} Proper error handling and user feedback
+    \item \textbf{Development Tools:} Console logging for debugging and verification
+\end{itemize}
+
+\end{document} 
