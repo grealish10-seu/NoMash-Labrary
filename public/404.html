@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/NoMash-Labrary/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoMash Library</title>
+    <script>
+      // Store the current path to be restored after redirect
+      sessionStorage.setItem('pathToRestore', window.location.pathname + window.location.search + window.location.hash);
+    </script>
+    <script>
+      // Redirect to index.html with the path as a query parameter
+      var path = window.location.pathname.slice('/NoMash-Labrary'.length);
+      var query = window.location.search;
+      var hash = window.location.hash;
+      window.location.replace('/NoMash-Labrary/' + '?redirect=' + encodeURIComponent(path + query + hash));
+    </script>
+  </head>
+  <body>
+    <div>Loading...</div>
+  </body>
+</html> 
