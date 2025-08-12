@@ -4,8 +4,8 @@
       <div class="d-flex justify-content-between align-items-center">
         <h1 class="h3 mb-0">NoMash Library</h1>
         <nav>
-          <ul class="nav nav-pills">
-            <li class="nav-item">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
               <router-link to="/" class="nav-link text-white">Home (Week 8)</router-link>
             </li>
             <li class="nav-item">
@@ -45,12 +45,12 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#" @click="logout">Logout</a></li>
               </ul>
-            </li>
-          </ul>
+        </li>
+      </ul>
         </nav>
       </div>
     </div>
-  </header>
+    </header>
 </template>
 
 <script setup>

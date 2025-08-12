@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}EFOLIO TASK 11.1 (PASS AND CREDIT LEVEL)}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Project Deployment Link}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Cloudflare Deployment Success Screenshot}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Project Homepage Screenshot}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}EFOLIO TASK 11.2 (DISTINCTION AND HIGH DISTINCTION LEVEL)}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}WeatherCheck Page Functionality}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Weather Page Address Bar Screenshot}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Weather Functionality Working Screenshot}{4}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Weather Search Results Screenshot}{5}{subsubsection.2.1.3}%
+\contentsline {section}{\numberline {3}Technical Implementation Summary}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Deployment Configuration}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Key Features Deployed}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Post-Deployment Verification}{6}{subsection.3.3}%
